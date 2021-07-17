@@ -1,0 +1,217 @@
+user@DESKTOP-4999CPP MINGW64 ~
+$ mkdir assessment
+
+user@DESKTOP-4999CPP MINGW64 ~
+$ cd assessment
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment
+$ notepad one.java
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment
+$ notepad two.java
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment
+$ notepad Three.java
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment
+$ ls -a
+./  ../  Three.java  one.java  two.java
+
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment
+$ git init
+Initialized empty Git repository in C:/Users/user/assessment/.git/
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (master)
+$ ls -a
+./  ../  .git/  Three.java  one.java  two.java
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Three.java
+        one.java
+        two.java
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (master)
+$ git checkout -b Dev
+Switched to a new branch 'Dev'
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (Dev)
+$ git checkout -b master
+Switched to a new branch 'master'
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (master)
+$ git add one.java
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (master)
+$ git add two.java
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (master)
+$ git add Three.java
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (master)
+$ git checkout -b Dev
+Switched to a new branch 'Dev'
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (Dev)
+$ git commit -m "first file" one.java
+[Dev (root-commit) ae980a2] first file
+ 1 file changed, 20 insertions(+)
+ create mode 100644 one.java
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (Dev)
+$ git checkout -b Test
+Switched to a new branch 'Test'
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (Test)
+$ git commit -m "Second file file" two.java
+[Test 498660c] Second file file
+ 1 file changed, 28 insertions(+)
+ create mode 100644 two.java
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (Test)
+$ git log
+commit 498660cec0232be9e875fccadf037b9c4ea28d70 (HEAD -> Test)
+Author: khushbutolani <tolanikhushi70@gmail.com>
+Date:   Sat Jul 17 13:24:38 2021 +0530
+
+    Second file file
+
+commit ae980a2a69ac517e5b4063e452262e2a6e71d2c7 (Dev)
+Author: khushbutolani <tolanikhushi70@gmail.com>
+Date:   Sat Jul 17 13:24:10 2021 +0530
+
+    first file
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (Test)
+$ git status
+On branch Test
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Three.java
+
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (Test)
+$ git checkout -b Dev
+fatal: A branch named 'Dev' already exists.
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (Test)
+$ git checkout  Dev
+Switched to branch 'Dev'
+A       Three.java
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (Dev)
+$ vi one.java
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (Dev)
+$ git diff
+user@DESKTOP-4999CPP MINGW64 ~/assessment (Dev)
+$ git add one.java
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (Dev)
+$ git commit -m "modified" one.java
+[Dev 66b6468] modified
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (Dev)
+$ git checkout -b master
+Switched to a new branch 'master'
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (master)
+$ git pull
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (master)
+$  git commit -m "added"
+[master 2782da8] added
+ 1 file changed, 14 insertions(+)
+ create mode 100644 Three.java
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (master)
+$ git merge Test
+Merge made by the 'recursive' strategy.
+ two.java | 28 ++++++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
+ create mode 100644 two.java
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (master)
+$ git merge Dev
+Already up to date.
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (master)
+$ git remote add origin https://github.com/khushbutolani/assessment.git
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (master)
+$ git push -u origin master
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (14/14), 1.74 KiB | 446.00 KiB/s, done.
+Total 14 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), done.
+To https://github.com/khushbutolani/assessment.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (master)
+$ mkdir assessment2
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment (master)
+$ cd assessment2
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment2
+$ git clone https://github.com/khushbutolani/assessment.git
+Cloning into 'assessment'...
+remote: Enumerating objects: 14, done.
+remote: Counting objects: 100% (14/14), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 14 (delta 3), reused 14 (delta 3), pack-reused 0
+Receiving objects: 100% (14/14), done.
+Resolving deltas: 100% (3/3), done.
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment2
+$ ls -a
+./  ../  assessment/
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment2
+$ cd ..
+
+user@DESKTOP-4999CPP MINGW64 ~
+$ cd assessment2
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment2
+$ ls
+assessment/
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment2
+$ ls -a
+./  ../  assessment/
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment2
+$ cd assessment
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment2/assessment (master)
+$ ls -a
+./  ../  .git/  Three.java  one.java  two.java
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment2/assessment (master)
+$ cd..
+bash: cd..: command not found
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment2/assessment (master)
+$ cd ..
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment2
+$ cd ..
+
+user@DESKTOP-4999CPP MINGW64 ~
+$ cd assessment
+
