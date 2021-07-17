@@ -13,8 +13,8 @@ class one
 
    
     if ( num % 2 == 0 )
-        System.out.println("Entered number is even");
+        System.out.println(" even");
      else
-        System.out.println("Entered number is odd");
+        System.out.println(" odd");
   }
 }
