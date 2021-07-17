@@ -5,6 +5,11 @@ user@DESKTOP-4999CPP MINGW64 ~
 $ cd assessment
 
 user@DESKTOP-4999CPP MINGW64 ~/assessment
+$ git init
+Initialized empty Git repository in C:/Users/user/assessment/.git/
+
+
+user@DESKTOP-4999CPP MINGW64 ~/assessment
 $ notepad one.java
 
 user@DESKTOP-4999CPP MINGW64 ~/assessment
@@ -16,12 +21,6 @@ $ notepad Three.java
 user@DESKTOP-4999CPP MINGW64 ~/assessment
 $ ls -a
 ./  ../  Three.java  one.java  two.java
-
-
-user@DESKTOP-4999CPP MINGW64 ~/assessment
-$ git init
-Initialized empty Git repository in C:/Users/user/assessment/.git/
-
 user@DESKTOP-4999CPP MINGW64 ~/assessment (master)
 $ ls -a
 ./  ../  .git/  Three.java  one.java  two.java
